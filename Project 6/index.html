@@ -91,10 +91,34 @@
 
          <label >Already have an account?</label><br><br>
             <a href="#">Login</a><br><br><br><br>
-         <button>Submit</button> <br><br>
+         
 
-        
-
+         <Form action="/action_page.php" oninput="x.value=(parseInt(m1.value)+parseInt(m2.value)+parseInt(m3.value))/3" >
+            <Fieldset>
+                <legend>
+                    Last Year Marks Details 
+                </legend>
+                <label for="Enter Marks"></label>
+                <Select name = "Subject"  id="Subject" >
+                <option value = "Maths">Maths</option>
+                 <option  value ="English> ">English</option>   
+                 <option value = "Science">Science</option></Select>
+                 <input type="number" id="m1" name="m1">
+                <Select name = "Subject"  id="Subject" >
+                <option value = "Maths">Maths</option>
+                 <option  value ="English> ">English</option>   
+                 <option value = "Science">Science</option></Select>
+                 <input type="number" id="m2" name="m2"> <br> <br>
+                 <Select name = "Subject"  id="Subject" >
+                <option value = "Maths">Maths</option>
+                 <option  value ="English> ">English</option>   
+                 <option value = "Science">Science</option></Select>
+                 <input type="number" id="m3" name="m3"><br><br>
+                
+                 Average:<output name="x" for="m1 m2 m3"></output>
+            </Fieldset>
+        </Form>
+<button>Submit</button> <br><br><br><br><br><strong>Note:</strong> Please fill in all the required fields before submitting the form. Make sure to provide accurate information for a smooth registration process. If you have any questions or need assistance, feel free to contact our support team.
              
 
            </Fieldset>
