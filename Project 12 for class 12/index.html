@@ -1,0 +1,56 @@
+<html>
+    <head>
+     <style>
+        .sticky {
+            position: sticky;
+            top: 30px;
+            background-color: yellow;
+             height: 200px;
+             opacity: 0.1;
+        }
+        .fixed {
+            position: fixed;
+            top: 200px;
+            left: 100px;
+            background-color: lightblue;
+             height: 150px;
+             opacity: 0.5;
+        }
+        .absolute {
+            position: absolute;
+            top: 200px;
+            left:100px;
+            background-color: lightgreen;
+             height: 200px;
+                opacity: 0.7;
+        }
+        .relative {
+            position: relative;
+            top: 200px;
+            left: 150px;
+            background-color: lightcoral;
+             height: 200px;
+                opacity: 0.9;
+        }
+        .static {
+            position: static;
+            background-color: lightgray;
+            height: 200px;
+            
+                opacity: 1;
+        }
+     </style>
+    </head>
+    <body>
+        <h2>Potioning</h2>
+        <div>
+            Div qith no position property
+        </div>
+        <div class="sticky">Sticky Div;Opacity is 0.1 </div>
+        <div class="fixed">Fixed Div;Opacity is 0.5</div>
+        <div class="absolute">Absolute Div;Opacity is 0.7</div>
+        <div class="relative">Relative Div;Opacity is 0.9</div>
+        <div class="static">Static Div;Opacity is 1</div>
+        
+    </body>
+</html>

@@ -1,0 +1,53 @@
+</html>
+<html>
+    <head>
+    <style>
+        p{
+            font-size: 20px;
+            background-color: lightskyblue;
+            padding: 10px;
+        }
+        .First {
+            opacity: 0.1;
+        }
+        .Second {
+            opacity: 0.5;
+        }
+        .Third {
+            opacity: 0.9;
+        }
+        .Fourth {
+            opacity: 1;
+        }
+        .Fifth {
+            opacity: 0.3;
+        }
+        .Sixth {
+            opacity: 0.7;
+        }
+    </style>       
+    </head>
+    <body>
+        <h1>The opacity Property</h1>
+        <p>This is a paragraph with reduced opacity.</p>
+        <div class="First">
+            <p>Opacity is 0.1</p>
+        </div>
+        <div class ="Second">
+            <p>Opacity is 0.5</p>
+        </div>
+            <div class="Third">
+                <p>Opacity is 0.9</p>
+            </div>
+            <div class="Fourth">
+                <p>Opacity is 1</p>
+                </div>
+            <div class="Fifth">
+                <p>Opacity is 0.3</p>
+                </div>
+                <div class="Sixth">
+                    <p>Opacity is 0.7.</p>
+                    </div>
+        </div>
+    </body>
+</html>
