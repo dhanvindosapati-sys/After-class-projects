@@ -1,24 +1,407 @@
-<html>
-    <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    </head>
-    <body>
-      <div class="container-fluid border border-dark p-4 my-4" >
-        <h1 class="text-primary">My First Bootstrap Web Page</h1>
-        <p class="text-danger">This is a simple web page using Bootstrap.</p>
-        <p class="text-info">This is the second paragraph.</p>
-      </div>
-      <div class="container border border-danger-rgb p-5 my-5">
-        <h2 class="text-success">Welcome to My Web Page</h2>
-        <p class="text-tertiary">Bootstrap makes it easy to create responsive and stylish web pages.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanvin - Portfolio</title>
     
- 
-      </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f8f9fa;
+        }
 
-      <div class="container border border-primary p-3 my-3">
-        <h3 class="text-warning">Bootstrap Components</h3>
-        <p class="text-info">Bootstrap provides a wide range of components like buttons, cards, and modals.</p>
-      </div>
-    </body>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hobby-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .hobby-card .card-body {
+            padding: 2rem;
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-icon {
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hobby-item {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hobby-item:nth-child(1) { animation-delay: 0.1s; }
+        .hobby-item:nth-child(2) { animation-delay: 0.2s; }
+        .hobby-item:nth-child(3) { animation-delay: 0.3s; }
+        .hobby-item:nth-child(4) { animation-delay: 0.4s; }
+        .hobby-item:nth-child(5) { animation-delay: 0.5s; }
+        .hobby-item:nth-child(6) { animation-delay: 0.6s; }
+
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-dark" href="#"><i class="fas fa-user-tie me-2"></i>Dhanvin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4">Hi, I'm Dhanvin</h1>
+                    <p class="lead">Creative professional passionate about turning hobbies into extraordinary experiences. Explore my world of interests!</p>
+                    <a href="#hobbies" class="btn btn-light btn-lg btn-custom">Discover My Hobbies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-dark mb-5">My Hobbies & Passions</h2>
+            <div class="row g-4">
+                <!-- Photography -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-primary">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Photography</h4>
+                            <p class="card-text">Capturing life's beautiful moments through the lens. From landscapes to portraits, I love telling stories with images.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-success">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Music Production</h4>
+                            <p class="card-text">Creating beats and melodies that resonate. Exploring electronic music and experimenting with sound design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coding -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-info">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Coding</h4>
+                            <p class="card-text">Building websites and apps that solve real problems. Passionate about web development and modern frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hiking -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-warning">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Hiking</h4>
+                            <p class="card-text">Exploring nature trails and mountain peaks. Nothing beats the feeling of reaching the summit after a challenging hike.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cooking -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-danger">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Cooking</h4>
+                            <p class="card-text">Experimenting with flavors from around the world. From Italian pasta to Asian fusion, I love culinary adventures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reading -->
+                <div class="col-lg-4 col-md-6 hobby-item">
+                    <div class="card hobby-card h-100">
+                        <div class="card-body text-center">
+                            <div class="hobby-icon text-secondary">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Reading</h4>
+                            <p class="card-text">Devouring books on technology, philosophy, and fiction. A good book is the perfect escape from reality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">A Little About Me</h2>
+                    <p class="lead mb-4">I'm a creative soul who believes in living life to the fullest. My diverse hobbies keep me inspired and energized.</p>
+                    <p>Whether I'm behind the camera, in the kitchen, or coding late into the night, I approach each passion with curiosity and dedication. These hobbies aren't just activities—they shape who I am and how I see the world.</p>
+                    <a href="#contact" class="btn btn-custom mt-3">Get In Touch</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                         class="img-fluid rounded-circle shadow-lg" alt="Dhanvin Profile Picture" style="width: 300px; height: 300px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-dark mb-5">Let's Connect</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                                    <h6>dhanvindosapati@gmail.com</h6>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-phone fa-2x text-success mb-2"></i>
+                                    <h6>+1 224-933-2624</h6>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-map-marker-alt fa-2x text-warning mb-2"></i>
+                                    <h6>New York, NY</h6>
+                                </div>
+                            </div>
+                            <div class="social-links text-center">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-3">&copy; 2024 Dhanvin. All rights reserved. Made with <i class="fas fa-heart text-danger"></i> and lots of creativity.</p>
+            <p class="mb-0">Follow me on social media to see more of my hobby adventures!</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.style.background = 'white';
+            }
+        });
+
+        // Animate hobby cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hobby-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
