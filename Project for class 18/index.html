@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam's Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom CSS to make it look extraordinary and clean */
+        body {
+            padding-top: 70px; /* Creates space so fixed navbar doesn't cover content */
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding: 60px 0;
+            min-height: 100vh; /* Makes section take up at least full screen height */
+        }
+
+        .bg-light-custom {
+            background-color: #ffffff;
+        }
+
+        .service-card {
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Navbar active link styling */
+        .nav-link.active {
+            color: #fff !important;
+            background-color: transparent !important;
+            border-bottom: 2px solid #fff;
+        }
+        
+        /* Smooth scrolling handled by Bootstrap data-bs-smooth-scroll, 
+           but we ensure html has scroll-behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<!-- 
+    SCROLLSPY SETUP:
+    data-bs-spy="scroll": Tells Bootstrap to watch the scroll position.
+    data-bs-target="#navbar": Links the scroll spy to our navbar ID.
+    tabindex="0": Allows scrolling to work properly.
+-->
+<body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
+
+    <!-- NAVIGATION BAR -->
+    <!-- Fixed to top so it stays while scrolling -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Sam's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto pushes links to right -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+
+        <!-- HOME SECTION WITH CAROUSEL -->
+        <section id="home" class="section-padding">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <div class="col-12">
+                        <h1 class="display-4 fw-bold">Welcome to Sam's World</h1>
+                        <p class="lead text-muted">Building digital experiences one line of code at a time.</p>
+                    </div>
+                </div>
+
+                <!-- Carousel Example (Slider) -->
+                <div id="myCarousel" class="carousel slide carousel-fade shadow-lg rounded" data-bs-ride="carousel">
+                    <!-- Indicators (The dots at the bottom) -->
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for Slides -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <!-- Using placeholder image -->
+                            <img src="https://source.unsplash.com/random/1200x600?technology" class="d-block w-100" alt="Technology">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <h5>Project Alpha</h5>
+                                <p>A fully responsive web application.</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://source.unsplash.com/random/1200x600?code" class="d-block w-100" alt="Code">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <h5>Project Beta</h5>
+                                <p>Clean code and modern design.</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://source.unsplash.com/random/1200x600?computer" class="d-block w-100" alt="Computer">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <h5>Project Gamma</h5>
+                                <p>Automation and efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section-padding bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="mb-4">About Sam</h2>
+                        <p class="lead">Hello! I am Sam, a passionate developer based in the city.</p>
+                        <p>Ever since I was a kid, I loved building things. Now, I build digital products. I specialize in creating clean, modern websites using HTML, CSS, and JavaScript. My goal is to create websites that are not only functional but also beautiful to look at.</p>
+                        <p>I am currently open for freelance work and collaborations.</p>
+                        <a href="#contact" class="btn btn-primary mt-3">Hire Me</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <!-- Placeholder for Sam's Image -->
+                        <img src="https://via.placeholder.com/400x400?text=Sam's+Photo" class="img-fluid rounded-circle shadow" alt="Sam">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="section-padding">
+            <div class="container">
+                <h2 class="text-center mb-5">My Services</h2>
+                <div class="row g-4">
+                    <!-- Service Card 1 -->
+                    <div class="col-md-4">
+                        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Web Development</h5>
+                                <p class="card-text">Building fast and responsive websites using the latest technologies like Bootstrap 5.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="col-md-4">
+                        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">UI/UX Design</h5>
+                                <p class="card-text">Creating intuitive and attractive designs that provide great user experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="col-md-4">
+                        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Consulting</h5>
+                                <p class="card-text">Helping businesses optimize their online presence and technical workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding bg-light-custom">
+            <div class="container">
+                <h2 class="text-center mb-5">Contact Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Sam Smith">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="How can I help you?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p>&copy; 2023 Sam's Portfolio. Built with HTML, CSS & Bootstrap.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
